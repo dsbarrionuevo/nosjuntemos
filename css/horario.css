@@ -1,0 +1,41 @@
+#tabla_horario{
+    border-collapse: collapse;
+}
+#tabla_horario thead th{
+    padding: 10px 20px;
+    background-color: #BBDEFB;
+}
+#tabla_horario tbody tr td{
+    background-color: rgba(0,0,0,0.01);
+}
+#tabla_horario tbody tr:nth-child(2n) td{
+    background-color:rgba(0,0,0,0.02);
+}
+#tabla_horario thead tr th:first-child{
+ background-color: #90CAF9;
+}
+#tabla_horario tbody tr td:first-child{
+    background-color: rgba(0,0,0,0.03);
+    border-right: 2px solid rgba(0,0,0,0.05);
+}
+#tabla_horario tbody tr:not(:last-child) td:first-child{
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+#tabla_horario tbody td{
+    padding: 20px 60px;
+}
+#tabla_horario tbody tr td:not(:first-child):hover{
+    box-shadow: inset 1px 1px 0px rgba(0,0,0,0.5), inset -1px -1px 0px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+#tabla_horario tbody tr td:not(:first-child).marked{
+    background-color: rgba(0,0,0,0.08);
+}
+#tabla_horario tbody tr td:first-child label{
+    position: relative;
+    text-align: center;
+    font-size:16px;
+    top: 30px;
+    background-color: #fff;
+    padding:4px;
+}
