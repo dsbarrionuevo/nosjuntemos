@@ -27,7 +27,7 @@ var Scheduler = (function () {
         for (var i = initTime; i <= finishTime; i++) {
             var time = i + ":00";
             var tr = "<tr>";
-            if (i === finishTime) {
+            if (i == finishTime) {
                 tr = "<td></td>";
             } else {
                 tr += "<td><label>" + time + "</label></td>";

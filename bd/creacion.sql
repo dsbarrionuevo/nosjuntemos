@@ -16,7 +16,7 @@ CREATE TABLE reuniones (
     hora_inicio TIME NOT NULL, 
     hora_fin TIME NOT NULL, 
     fecha_creacion DATETIME NOT NULL DEFAULT NOW(),
-    fecha_reunion DATETIME NOT NULL,
+    fecha_reunion DATE NOT NULL,
     PRIMARY KEY(id)
 )ENGINE InnoDB DEFAULT CHARACTER SET=utf8;
 
