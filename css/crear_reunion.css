@@ -1,0 +1,6 @@
+#lista_dias{
+    list-style-type: none;
+}
+#lista_dias li{
+    display: inline;
+}

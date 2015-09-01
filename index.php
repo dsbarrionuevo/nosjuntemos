@@ -14,36 +14,6 @@
         <main>
             <h4 id="lugar">Lugar</h4>
             <table id="tabla_horario">
-                <thead>
-                    <tr>
-                        <th>
-                            Hora
-                        </th>
-                        <th>
-                            Lunes
-                        </th>
-                        <th>
-                            Martes
-                        </th>
-                        <th>
-                            Miércoles
-                        </th>
-                        <th>
-                            Jueves
-                        </th>
-                        <th>
-                            Viernes
-                        </th>
-                        <th>
-                            Sábado
-                        </th>
-                        <th>
-                            Domingo
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
             </table>
         </main>
     </body>

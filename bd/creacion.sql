@@ -10,6 +10,7 @@ CREATE TABLE dias (
 
 CREATE TABLE reuniones (
     id INT NOT NULL AUTO_INCREMENT, 
+    nombre VARCHAR(100) NOT NULL, 
     lugar VARCHAR(100) NOT NULL, 
     hash VARCHAR(256) NOT NULL, 
     hora_inicio TIME NOT NULL, 
