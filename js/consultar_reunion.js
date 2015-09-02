@@ -19,7 +19,28 @@ $(document).ready(function () {
             });
             $("#nombre").html(reunion.nombre);
             $("#lugar").html(reunion.lugar);
+            $("#fecha").html(reunion.fecha_reunion);
         }
+    });
+
+    $("#btnAsistir").click(function () {
+        console.log(Scheduler.getMarks());
+        $.ajax({
+            url: "ajax/asistir.ctrl.php",
+            type: "post",
+            data: {
+                datos: {
+                    nombre: $("#txtNombre").val().trim(),
+                    hash: $("#hash").html().trim(),
+                    horarios: Scheduler.getMarks()
+                }
+            }
+        }).done(function (respuesta) {
+            console.log(respuesta);
+//            var respuesta = JSON.parse(respuesta);
+//            if (respuesta.exito === "ok") {
+//            }
+        });
     });
 
     function obtenerHora(cadena) {

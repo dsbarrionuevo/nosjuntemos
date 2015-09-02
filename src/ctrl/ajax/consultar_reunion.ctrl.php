@@ -21,7 +21,6 @@ if (!is_null($reunion)) {
 } else {
     $respuesta["exito"] = "error";
     $respuesta["mensaje"] = "No exite tal reunión";
-    $respuesta["hash"] = $hash;
 }
 
 echo json_encode($respuesta);

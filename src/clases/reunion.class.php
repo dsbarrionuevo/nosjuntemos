@@ -160,4 +160,44 @@ class Reunion {
         return $reunion;
     }
 
+    public static function registrar_asistencia($id_reunion, $nombre, $horarios) {
+        $conexion = Conexion::get_instancia();
+        $conexion->transaccion_comenzar();
+        $transaccion_exitosa = true;
+        $datos = array(
+            "id_reunion" => $id_reunion,
+            "nombre" => $nombre
+        );
+        if ($conexion->insertar("asistencias", $datos)) {
+            $id_asistencia = $conexion->get_id_insercion();
+            $dias = array();
+            $consulta = "SELECT id, nombre FROM dias";
+            $resultados = $conexion->consultar_simple($consulta);
+            foreach ($resultados as $resultado) {
+                $dias[$resultado["nombre"]] = $resultado["id"];
+            }
+            foreach ($horarios as $dia) {
+                if (isset($dia["intervals"])) {
+                    $intervalos = $dia["intervals"];
+                    foreach ($intervalos as $intervalo) {
+                        $datos = array(
+                            "id_asistencia" => $id_asistencia,
+                            "id_dia" => $dias[$dia["name"]],
+                            "hora_inicio" => $intervalo["initHour"] . ":00:00",
+                            "hora_fin" => $intervalo["endHour"] . ":00:00"
+                        );
+                        if (!$conexion->insertar("horas_x_asistencia", $datos)) {
+                            $transaccion_exitosa = false;
+                            break;
+                        }
+                    }
+                }
+            }
+        } else {
+            $transaccion_exitosa = false;
+        }
+        $conexion->transaccion_terminar($transaccion_exitosa);
+        return $transaccion_exitosa;
+    }
+
 }
