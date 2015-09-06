@@ -105,8 +105,8 @@ class Reunion {
             "lugar" => $lugar,
             "hash" => md5(time()),
             "fecha_reunion" => Util::date_to_big_endian($fecha),
-            "hora_inicio" => $hora_inicio,
-            "hora_fin" => $hora_fin
+            "hora_inicio" => $hora_inicio . ":00:00",
+            "hora_fin" => $hora_fin . ":00:00"
         );
         if ($conexion->insertar("reuniones", $datos)) {
             $id_reunion = $conexion->get_id_insercion();

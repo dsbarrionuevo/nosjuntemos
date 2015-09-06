@@ -24,16 +24,24 @@ var Scheduler = (function () {
         tableHtml += thead;
 
         var tbody = "<tbody>";
+        finishTime++;
         for (var i = initTime; i <= finishTime; i++) {
             var time = i + ":00";
             var tr = "<tr>";
             if (i == finishTime) {
-                tr = "<td></td>";
-            } else {
+                tr += "<td class='unused'></td>";
+            } else if (i == initTime) {
+                tr += "<td class='unused'><label>" + time + "</label></td>";
+            }
+            else {
                 tr += "<td><label>" + time + "</label></td>";
             }
             for (var j = 0; j < days.length; j++) {
-                tr += "<td class='timecell'></td>";
+                if (i == initTime || i == finishTime) {
+                    tr += "<td class='unused'></td>";
+                } else {
+                    tr += "<td class='timecell'></td>";
+                }
             }
             tr += "</tr>";
             tbody += tr;
