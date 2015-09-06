@@ -12,6 +12,7 @@
     <body>
         <main>
             <h4>Crear nueva reunión</h4>
+            <?php require_once $RUTA_SERVIDOR  . '/tmpl/mensaje.tmpl.php'; ?>
             <form action="<?php echo $RUTA_WEB; ?>/src/ctrl/crear_reunion.ctrl.php" method="post" >
                 <table>
                     <tr>

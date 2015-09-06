@@ -9,7 +9,7 @@
         <link href="<?php echo $RUTA_WEB; ?>/css/scheduler.css" type="text/css" rel="stylesheet"/>
         <script src="<?php echo $RUTA_WEB; ?>/js/jquery.js" type="text/javascript"></script>
         <script src="<?php echo $RUTA_WEB; ?>/js/scheduler.js" type="text/javascript"></script>
-        <script src="<?php echo $RUTA_WEB; ?>/js/consultar_reunion.js" type="text/javascript"></script>
+        <script src="<?php echo $RUTA_WEB; ?>/js/asistir.js" type="text/javascript"></script>
     </head>
     <body>
         <main>
@@ -35,11 +35,23 @@
                     </tr>
                 </table>
                 <br/>
-                <a href="<?php echo $RUTA_WEB . "/src/ctrl/asistir.ctrl.php?id=" . $tmpl_hash; ?>" class="boton botonAcero">Asistir a esta reunión</a>
-                <br/>
-                <br/>
+                <form>
+                    <table>
+                        <tr>
+                            <td>
+                                Nombre
+                            </td>
+                            <td>
+                                <input type='text' id="txtNombre" />
+                            </td>
+                            <td>
+                                <button type="button" id="btnAsistir" class="boton botonAcero">Asistir</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
                 <div>
-                    Resumen de asistencias a la reunión
+                    Marca tus horarios
                 </div>
                 <table id="tabla_horario">
                 </table>

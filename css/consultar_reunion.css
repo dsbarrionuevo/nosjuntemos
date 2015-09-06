@@ -1,3 +1,22 @@
+#nombre{
+    text-align: center;
+}
+#datosGenerales td{
+    padding: 5px;
+}
 #tabla_horario{
     width: 100%;
+}
+form table td{
+    padding: 8px;
+}
+form input[type=text]{
+    padding: 4px 6px;
+    border:solid 1px #888;
+}
+form input[type=text]:focus{
+    box-shadow:inset 0px -1px 0px #90CAF9;
+}
+form input[type=text]{
+    outline: none!important;
 }

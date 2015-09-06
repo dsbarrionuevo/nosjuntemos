@@ -7,6 +7,9 @@ body{
     background-color: #2196F3;
     min-width: 960px;
 }
+a{
+    text-decoration: none;
+}
 main{
     padding: 20px;
     box-sizing: border-box;
@@ -21,6 +24,12 @@ h4{
     margin-bottom: 15px;
     font-size: 26px;
     font-weight: 300;
+}
+.mensaje{
+    background-color: rgba(0,0,0,0.04);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    padding: 12px;
+    margin: 4px 0px;
 }
 .boton{
     color:#fff;

@@ -28,11 +28,17 @@
     box-shadow: inset 1px 1px 0px rgba(0,0,0,0.5), inset -1px -1px 0px rgba(0,0,0,0.5);
     cursor: pointer;
 }
+.scheduler tbody tr td.timecell span{
+    display: none;
+    background-color: #fff;
+    padding:4px;
+    box-shadow: 0px 1px 0px rgba(0,0,0,0.06);
+}
 .scheduler tbody tr td.unused{
     background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.04) 4%, rgba(0,0,0,0.01) 5%, rgba(0,0,0,0.01) 10%);
 }
 .scheduler tbody tr td:not(:first-child).marked{
-    background-color: rgba(0,0,0,0.08);
+    background-color: rgba(0,0,0,0.1);
 }
 .scheduler tbody tr td:first-child{
     text-align: center;

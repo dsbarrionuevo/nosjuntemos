@@ -97,13 +97,14 @@ class Reunion {
     }
 
     public static function insertar($nombre, $lugar, $fecha, $hora_inicio, $hora_fin, $dias) {
+        $hash_generado = md5(time());
         $conexion = Conexion::get_instancia();
         $conexion->transaccion_comenzar();
         $transaccion_exitosa = true;
         $datos = array(
             "nombre" => $nombre,
             "lugar" => $lugar,
-            "hash" => md5(time()),
+            "hash" => $hash_generado,
             "fecha_reunion" => Util::date_to_big_endian($fecha),
             "hora_inicio" => $hora_inicio . ":00:00",
             "hora_fin" => $hora_fin . ":00:00"
@@ -124,7 +125,10 @@ class Reunion {
             $transaccion_exitosa = false;
         }
         $conexion->transaccion_terminar($transaccion_exitosa);
-        return $transaccion_exitosa;
+        if(!$transaccion_exitosa){
+            $hash_generado = null;
+        }
+        return $hash_generado;
     }
 
     public static function consultar($hash) {

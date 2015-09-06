@@ -40,7 +40,7 @@ var Scheduler = (function () {
                 if (i == initTime || i == finishTime) {
                     tr += "<td class='unused'></td>";
                 } else {
-                    tr += "<td class='timecell'></td>";
+                    tr += "<td class='timecell'><span></span></td>";
                 }
             }
             tr += "</tr>";
