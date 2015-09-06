@@ -3,4 +3,21 @@
 }
 #lista_dias li{
     display: inline;
+    padding: 10px;
+}
+#lista_dias li label{
+    margin-left: 4px;
+}
+form table td{
+    padding: 8px;
+}
+form input[type=text]{
+    padding: 4px 6px;
+    border:solid 1px #888;
+}
+form input[type=text]:focus{
+    box-shadow:inset 0px -1px 0px #90CAF9;
+}
+form input[type=text]{
+    outline: none!important;
 }

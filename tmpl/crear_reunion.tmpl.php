@@ -4,9 +4,10 @@
         <meta charset="utf-8">
         <title>Nos Juntemos!</title>
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-        <link href="<?php echo $RUTA_WEB; ?>/css/index.css" type="text/css" rel="stylesheet"/>
+        <link href="<?php echo $RUTA_WEB; ?>/css/general.css" type="text/css" rel="stylesheet"/>
         <link href="<?php echo $RUTA_WEB; ?>/css/crear_reunion.css" type="text/css" rel="stylesheet"/>
         <script src="<?php echo $RUTA_WEB; ?>/js/jquery.js" type="text/javascript"></script>
+        <script src="<?php echo $RUTA_WEB; ?>/js/crear_reunion.js" type="text/javascript"></script>
     </head>
     <body>
         <main>
@@ -71,7 +72,7 @@
                         <td>
                         </td>
                         <td>
-                            <input type="submit" name="btn_crear" value="Crear reunión" />
+                            <input type="submit" name="btn_crear" value="Crear reunión" class="boton botonAcero" />
                         </td>
                     </tr>
                 </table>

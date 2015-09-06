@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #2196F3;
+    min-width: 960px;
+}
+main{
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    width:90%;
+    max-width: 940px;
+    margin: 20px auto;
+    box-shadow: 0px 8px 0px -5px rgba(0,0,0,0.2);
+    border:1px solid rgba(0,0,0,0.8);
+}
+h4{
+    margin-bottom: 15px;
+    font-size: 26px;
+    font-weight: 300;
+}
+.boton{
+    color:#fff;
+    padding:5px 15px;
+    font-size:16px;
+    text-align: center;
+}
+.boton:hover{
+    cursor: pointer;
+}
+/* Boton acero */
+.botonAcero{
+    color:#fff;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.6);
+    border:solid 1px rgba(0,0,0,0.9);
+    box-shadow:0px 1px 2px -1px rgba(0,0,0,0.6);
+    background-color:#2196F3;
+}
+.botonAcero:hover{
+    background-color:#64B5F6;
+}
+.botonAcero:active{
+    color:#eee;
+}
