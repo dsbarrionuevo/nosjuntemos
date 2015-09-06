@@ -228,15 +228,15 @@ class Reunion {
         foreach ($resultados as $resultado) {
             $dias[$resultado["nombre"]] = $resultado["id"];
             $resumen[$resultado["nombre"]] = array(); //horarios
-            for ($i = $hora_inicio; $i <= $hora_fin; $i++) {
+            for ($i = $hora_inicio; $i < $hora_fin; $i++) {
                 $resumen[$resultado["nombre"]][$i] = 0;
             }
         }
         foreach ($asistencias as $asistencia) {
             $dias = $asistencia->get_dias();
             foreach ($dias as $dia) {
-                for ($i = $hora_inicio; $i <= $hora_fin; $i++) {
-                    if ($i >= Reunion::convertir_hora($dia["hora_inicio"]) && $i <= Reunion::convertir_hora($dia["hora_fin"])) {
+                for ($i = $hora_inicio; $i < $hora_fin; $i++) {
+                    if ($i >= Reunion::convertir_hora($dia["hora_inicio"]) && $i < Reunion::convertir_hora($dia["hora_fin"])) {
                         $resumen[$dia["nombre"]][$i] = $resumen[$dia["nombre"]][$i] + 1;
                     }
                 }
