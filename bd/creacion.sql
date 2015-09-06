@@ -49,4 +49,4 @@ CREATE TABLE horas_x_asistencia (
     FOREIGN KEY(id_dia) REFERENCES dias(id)
 )ENGINE InnoDB DEFAULT CHARACTER SET=utf8;
 
-INSERT INTO dias(nombre) VALUES ("Lunes"), ("Martes"), ("Miércoles"), ("Viernes"), ("Sábado"), ("Domingo");
+INSERT INTO dias(nombre) VALUES ("Lunes"), ("Martes"), ("Miércoles"), ("Jueves"),("Viernes"), ("Sábado"), ("Domingo");

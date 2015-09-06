@@ -200,4 +200,57 @@ class Reunion {
         return $transaccion_exitosa;
     }
 
+    public static function consultar_asistencias($hash) {
+        $asistencias = array();
+        $conexion = Conexion::get_instancia();
+        $consulta = "SELECT a.id, a.nombre, r.hora_inicio, r.hora_fin "
+                . "FROM asistencias AS a "
+                . "INNER JOIN reuniones AS r ON a.id_reunion = r.id "
+                . "WHERE r.hash = '{$hash}'";
+        $resultados = $conexion->consultar_simple($consulta);
+        foreach ($resultados as $resultado) {
+            $id_asistencia = $resultado["id"];
+            $asistencia = Asistencia::consultar($id_asistencia);
+            $asistencias[] = $asistencia;
+        }
+        return $asistencias;
+    }
+
+    public static function consultar_resumen($hash) {
+        $asistencias = Reunion::consultar_asistencias($hash);
+        $reunion = Reunion::consultar($hash);
+        $hora_inicio = Reunion::convertir_hora($reunion->get_hora_inicio());
+        $hora_fin = Reunion::convertir_hora($reunion->get_hora_fin());
+        $resumen = array();
+        $conexion = Conexion::get_instancia();
+        $consulta = "SELECT id, nombre FROM dias";
+        $resultados = $conexion->consultar_simple($consulta);
+        foreach ($resultados as $resultado) {
+            $dias[$resultado["nombre"]] = $resultado["id"];
+            $resumen[$resultado["nombre"]] = array(); //horarios
+            for ($i = $hora_inicio; $i <= $hora_fin; $i++) {
+                $resumen[$resultado["nombre"]][$i] = 0;
+            }
+        }
+        foreach ($asistencias as $asistencia) {
+            $dias = $asistencia->get_dias();
+            foreach ($dias as $dia) {
+                for ($i = $hora_inicio; $i <= $hora_fin; $i++) {
+                    if ($i >= Reunion::convertir_hora($dia["hora_inicio"]) && $i <= Reunion::convertir_hora($dia["hora_fin"])) {
+                        $resumen[$dia["nombre"]][$i] = $resumen[$dia["nombre"]][$i] + 1;
+                    }
+                }
+            }
+        }
+        return $resumen;
+    }
+
+    private static function convertir_hora($hora) {
+        if (!strpos($hora, ":")) {
+            $partes = explode(":", $hora);
+            return (int) $partes[0];
+        }
+        return (int) $hora;
+    }
+
 }
