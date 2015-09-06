@@ -1,43 +1,43 @@
-#tabla_horario{
+.scheduler{
     border-collapse: collapse;
 }
-#tabla_horario thead th{
+.scheduler thead th{
     padding: 10px 20px;
     background-color: #BBDEFB;
 }
-#tabla_horario tbody tr td{
+.scheduler tbody tr td{
     background-color: rgba(0,0,0,0.02);
 }
-#tabla_horario tbody tr:nth-child(2n) td{
+.scheduler tbody tr:nth-child(2n) td{
     background-color:rgba(0,0,0,0.04);
 }
-#tabla_horario thead tr th:first-child{
+.scheduler thead tr th:first-child{
  background-color: #90CAF9;
 }
-#tabla_horario tbody tr td:first-child{
+.scheduler tbody tr td:first-child{
     background-color: rgba(0,0,0,0.06);
     border-right: 2px solid rgba(0,0,0,0.05);
 }
-#tabla_horario tbody tr:not(:last-child) td:first-child{
+.scheduler tbody tr:not(:last-child) td:first-child{
     border-bottom: 1px solid rgba(0,0,0,0.04);
 }
-#tabla_horario tbody td{
+.scheduler tbody td{
     padding: 20px 60px;
 }
-#tabla_horario tbody tr td.timecell:hover{
+.scheduler tbody tr td.timecell:hover{
     box-shadow: inset 1px 1px 0px rgba(0,0,0,0.5), inset -1px -1px 0px rgba(0,0,0,0.5);
     cursor: pointer;
 }
-#tabla_horario tbody tr td.unused{
+.scheduler tbody tr td.unused{
     background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.04) 4%, rgba(0,0,0,0.01) 5%, rgba(0,0,0,0.01) 10%);
 }
-#tabla_horario tbody tr td:not(:first-child).marked{
+.scheduler tbody tr td:not(:first-child).marked{
     background-color: rgba(0,0,0,0.08);
 }
-#tabla_horario tbody tr td:first-child{
+.scheduler tbody tr td:first-child{
     text-align: center;
 }
-#tabla_horario tbody tr td:first-child label{
+.scheduler tbody tr td:first-child label{
     position: relative;
     top: 30px;
     font-size:16px;

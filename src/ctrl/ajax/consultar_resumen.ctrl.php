@@ -4,7 +4,7 @@ require_once '../../../config.php';
 
 $respuesta = array();
 
-$hash = filter_input(INPUT_POST, "hash");
+$hash = filter_input(INPUT_POST, "id");
 //$hash = $_REQUEST["id"];
 $resumen = Reunion::consultar_resumen($hash);
 

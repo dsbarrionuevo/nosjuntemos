@@ -5,15 +5,15 @@
         <title>Nos Juntemos!</title>
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <link href="<?php echo $RUTA_WEB; ?>/css/index.css" type="text/css" rel="stylesheet"/>
-        <link href="<?php echo $RUTA_WEB; ?>/css/horario.css" type="text/css" rel="stylesheet"/>
+        <link href="<?php echo $RUTA_WEB; ?>/css/scheduler.css" type="text/css" rel="stylesheet"/>
         <script src="<?php echo $RUTA_WEB; ?>/js/jquery.js" type="text/javascript"></script>
-        <script src="<?php echo $RUTA_WEB; ?>/js/horario.js" type="text/javascript"></script>
+        <script src="<?php echo $RUTA_WEB; ?>/js/scheduler.js" type="text/javascript"></script>
         <script src="<?php echo $RUTA_WEB; ?>/js/consultar_reunion.js" type="text/javascript"></script>
     </head>
     <body>
         <main>
             <?php if (isset($tmpl_hash)): ?>
-                <span id="hash"><?php echo $tmpl_hash; ?></span>
+                <span id="idReunion"><?php echo $tmpl_hash; ?></span>
                 <h2 id="nombre"></h2>
                 <h4 id="lugar"></h4>
                 <h4 id="fecha"></h4>

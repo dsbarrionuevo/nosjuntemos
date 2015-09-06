@@ -50,6 +50,7 @@ var Scheduler = (function () {
 
         tableHtml += tbody;
         table.html(tableHtml);
+        table.addClass("scheduler");
 
         $(document).on("click", ".timecell", function () {
             $(this).toggleClass("marked");

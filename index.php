@@ -13,7 +13,7 @@
     <body>
         <main>
             <h4 id="lugar">Lugar</h4>
-            <table id="tabla_horario">
+            <table id="scheduler">
             </table>
         </main>
     </body>

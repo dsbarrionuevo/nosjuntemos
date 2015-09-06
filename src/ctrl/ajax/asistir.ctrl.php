@@ -5,7 +5,7 @@ require_once '../../../config.php';
 $respuesta = array();
 
 $datos = $_POST["datos"];
-$hash_reunion = $datos["hash"];
+$hash_reunion = $datos["id"];
 $reunion = Reunion::consultar($hash_reunion);
 $id_reunion = $reunion->get_id();
 $nombre = $datos["nombre"];
