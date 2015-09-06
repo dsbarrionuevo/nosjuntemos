@@ -91,6 +91,22 @@ var Scheduler = (function () {
         return results;
     };
 
+    me.getTimecell = function (targetDay, targetInitHour) {
+        var dayIndex = -1;
+        for (var i = 0; i < days.length; i++) {
+            if (days[i] == targetDay) {
+                dayIndex = i + 1;
+            }
+        }
+        var hourIndex = -1;
+        for (var i = initTime; i < finishTime; i++) {
+            if (i == targetInitHour) {
+                hourIndex = i - initTime + 1;
+            }
+        }
+        return table.find("tbody tr").eq(hourIndex).find("td").eq(dayIndex);
+    };
+
     return me;
 
 })();

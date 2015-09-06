@@ -24,7 +24,7 @@
 #tabla_horario tbody td{
     padding: 20px 60px;
 }
-#tabla_horario tbody tr td:not(.unused):hover{
+#tabla_horario tbody tr td.timecell:hover{
     box-shadow: inset 1px 1px 0px rgba(0,0,0,0.5), inset -1px -1px 0px rgba(0,0,0,0.5);
     cursor: pointer;
 }
@@ -43,4 +43,5 @@
     font-size:16px;
     background-color: #fff;
     padding:4px;
+    box-shadow: 0px 1px 0px rgba(0,0,0,0.06);
 }
