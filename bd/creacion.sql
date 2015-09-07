@@ -15,7 +15,7 @@ CREATE TABLE reuniones (
     hash VARCHAR(256) NOT NULL, 
     hora_inicio TIME NOT NULL, 
     hora_fin TIME NOT NULL, 
-    fecha_creacion DATETIME NOT NULL DEFAULT NOW(),
+    fecha_creacion DATETIME NOT NULL,
     fecha_reunion DATE NOT NULL,
     PRIMARY KEY(id)
 )ENGINE InnoDB DEFAULT CHARACTER SET=utf8;
@@ -33,7 +33,7 @@ CREATE TABLE asistencias (
     id INT NOT NULL AUTO_INCREMENT, 
     id_reunion INT NOT NULL, 
     nombre VARCHAR(40) NOT NULL, 
-    fecha DATETIME NOT NULL DEFAULT NOW(),
+    fecha DATETIME NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY(id_reunion) REFERENCES reuniones(id)
 )ENGINE InnoDB DEFAULT CHARACTER SET=utf8;
