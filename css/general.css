@@ -54,3 +54,19 @@ h4{
 .botonAcero:active{
     color:#eee;
 }
+form table td{
+    padding: 8px;
+}
+form input[type=text]{
+    padding: 4px 6px;
+    border:solid 1px #888;
+}
+form input[type=text]:focus{
+    box-shadow:inset 0px -2px 0px #90CAF9;
+}
+form input[type=text].invalido{
+    border:solid 1px #D60000;
+}
+form input[type=text]{
+    outline: none!important;
+}
