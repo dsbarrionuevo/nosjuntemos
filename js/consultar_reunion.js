@@ -18,7 +18,8 @@ $(document).ready(function () {
                 table: $("#tabla_horario"),
                 days: reunion.dias,
                 initTime: obtenerHora(reunion.hora_inicio),
-                finishTime: obtenerHora(reunion.hora_fin)
+                finishTime: obtenerHora(reunion.hora_fin),
+                addClickEvent: false
             });
             $("#nombre").html(reunion.nombre);
             $("#lugar").html(reunion.lugar);

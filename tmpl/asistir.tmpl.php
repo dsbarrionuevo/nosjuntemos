@@ -39,7 +39,7 @@
                     <table>
                         <tr>
                             <td>
-                                Nombre
+                                Tu nombre:
                             </td>
                             <td>
                                 <input type='text' id="txtNombre" />
@@ -49,6 +49,7 @@
                             </td>
                         </tr>
                     </table>
+                    <div id="mensaje" class="mensaje"></div>
                 </form>
                 <div>
                     Marca tus horarios

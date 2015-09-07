@@ -52,9 +52,11 @@ var Scheduler = (function () {
         table.html(tableHtml);
         table.addClass("scheduler");
 
-        $(document).on("click", ".timecell", function () {
-            $(this).toggleClass("marked");
-        });
+        if (params.addClickEvent != undefined && params.addClickEvent == true) {
+            $(document).on("click", ".timecell", function () {
+                $(this).toggleClass("marked");
+            });
+        }
     };
 
     me.getMarks = function () {
@@ -90,6 +92,10 @@ var Scheduler = (function () {
 //        }
         //console.log(results);
         return results;
+    };
+    
+    me.getMarksCount = function(){
+        return  $(".marked").length;
     };
 
     me.getTimecell = function (targetDay, targetInitHour) {
