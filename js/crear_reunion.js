@@ -48,7 +48,7 @@ $(document).ready(function () {
         agrs.event.preventDefault();
     }
 
-    var validador = ValidatorJS.createValidator($("form").eq(0), ValidatorJS.VALIDATE_ON_SUBMIT,
+    var validador = ValidatorJS.createValidator($("form").eq(0), ValidatorJS.VALIDATE_ON_BLUR,
             {
                 validField: campoValido,
                 invalidField: campoInvalido,

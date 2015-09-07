@@ -52,9 +52,10 @@ $(document).ready(function () {
                             if (cantidad > 0) {
                                 var celda = Scheduler.getTimecell(nombreDia, horaInicio);
                                 var color = calcularColor(cantidad, maximo);
-                                celda.css("border-bottom", "4px solid " + color);
-                                //celda.children("span").html(cantidad);
-                                //celda.children("span").css("display", "inline");
+                                //celda.css("border-bottom", "4px solid " + color);
+                                celda.css("background", color);
+                                celda.children("span").html(cantidad);
+                                celda.children("span").css("display", "inline");
                             }
                         }
                     }

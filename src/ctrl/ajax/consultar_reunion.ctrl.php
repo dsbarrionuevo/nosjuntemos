@@ -15,7 +15,7 @@ if (!is_null($reunion)) {
         "lugar" => $reunion->get_lugar(),
         "hora_inicio" => $reunion->get_hora_inicio(),
         "hora_fin" => $reunion->get_hora_fin(),
-        "fecha_reunion" => $reunion->get_fecha_reunion(),
+        "fecha_reunion" => Util::date_to_little_endian($reunion->get_fecha_reunion()),
         "dias" => $reunion->get_dias()
     );
 } else {
