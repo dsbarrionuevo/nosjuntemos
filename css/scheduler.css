@@ -32,6 +32,9 @@
     opacity:1.0;
     top:0px;
 }
+.scheduler tbody tr td.timecell{
+    text-align: center;
+}
 .scheduler tbody tr td.timecell span{
     display: none;
     opacity:0.0;

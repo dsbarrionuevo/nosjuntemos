@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var colores = ["#E3F2FD", "#BBDEFB", "#90CAF9", "#64B5F6", "#42A5F5", "#2196F3", "#1E88E5", "#1976D2", "#1565C0", "#0D47A"];
+    var colores = ["#E3F2FD", "#BBDEFB", "#90CAF9", "#64B5F6", "#42A5F5", "#2196F3", "#1E88E5", "#1976D2", "#1565C0", "#0D47A1"];
     var idReunion = $("#idReunion").html().trim();
 
     $("#idReunion").hide();
@@ -70,8 +70,8 @@ $(document).ready(function () {
     }
 
     function calcularColor(cantidad, total) {
-        console.log(cantidad, total);
-        var valor = parseInt(((cantidad * 100) / total) / 10);
+        //console.log(cantidad, total);
+        var valor = parseInt((cantidad * 10) / total) - 1;
         return colores[valor];
     }
 

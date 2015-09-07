@@ -106,6 +106,7 @@ class Reunion {
             "lugar" => $lugar,
             "hash" => $hash_generado,
             "fecha_reunion" => Util::date_to_big_endian($fecha),
+            "fecha_creacion" => date('Y-m-d H:i:s'),
             "hora_inicio" => $hora_inicio . ":00:00",
             "hora_fin" => $hora_fin . ":00:00"
         );
@@ -125,7 +126,7 @@ class Reunion {
             $transaccion_exitosa = false;
         }
         $conexion->transaccion_terminar($transaccion_exitosa);
-        if(!$transaccion_exitosa){
+        if (!$transaccion_exitosa) {
             $hash_generado = null;
         }
         return $hash_generado;
@@ -170,7 +171,8 @@ class Reunion {
         $transaccion_exitosa = true;
         $datos = array(
             "id_reunion" => $id_reunion,
-            "nombre" => $nombre
+            "nombre" => $nombre,
+            "fecha" => date('Y-m-d H:i:s')
         );
         if ($conexion->insertar("asistencias", $datos)) {
             $id_asistencia = $conexion->get_id_insercion();

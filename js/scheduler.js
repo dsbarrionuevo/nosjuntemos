@@ -16,7 +16,7 @@ var Scheduler = (function () {
         var tableHtml = "";
         //thead
         var thead = "<thead><tr>";
-        thead += "<th>Time</th>";
+        thead += "<th>Horario</th>";
         for (var i = 0; i < days.length; i++) {
             thead += "<th>" + days[i] + "</th>";
         }
