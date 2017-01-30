@@ -4,7 +4,7 @@ class Dia {
 
     public static function consultar_dias() {
         $conexion = Conexion::get_instancia();
-        $consulta = "SELECT id, nombre FROM diaS";
+        $consulta = "SELECT id, nombre FROM dias";
         $resultados = $conexion->consultar_simple($consulta);
         $dias = [];
         foreach ($resultados as $resultado) {
